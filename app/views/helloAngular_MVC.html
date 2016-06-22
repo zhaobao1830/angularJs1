@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
 <head lang="en">
     <meta charset="UTF-8">
     <title>测试1</title>
-    <script type="text/javascript" src="../app/js/angular.min1.js"></script>
-    <script type="text/javascript" src="../app/js/helloAngular_MVC.js"></script>
+    <script type="text/javascript" src="../js/angular.js"></script>
+    <script type="text/javascript" src="../js/helloAngular_MVC.js"></script>
 </head>
 <body>
-    <div ng-app="HelloAnguler" ng-controller="helloAngular">
-        <p>{{greeting.text}}+AngularJs</p>
-    </div>
+    <!--<div ng-app="HelloAnguler" ng-controller="helloAngular">-->
+        <!--<p>{{greeting.text}}+AngularJs</p>-->
+    <!--</div>-->
+    <input ng-model="text">
+    {{text}}+angularjs
 </body>
 </html>

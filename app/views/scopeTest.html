@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>测试$scope</title>
+    <script type="text/javascript" src="../js/angular.js"></script>
+    <script type="text/javascript" src="../js/scopeTest.js"></script>
+</head>
+<body>
+    <!--$emit只能向parent controller传递event与data-->
+    <!--$broadcast只能向child controller传递event与data-->
+    <div ng-app="MyApp" ng-controller="EventController">
+        Root Scope
+        <tt>MyEvent</tt>count:{{count}}
+        <ul>
+            <li ng-repeat="i in [1]" ng-controller="EventController">
+                <button ng-click="$emit('MyEvent')">
+                    $emit('MyEvent')
+                </button>
+                <button ng-click="$broadcast('MyEvent')">
+                    $broadcast('MyEvent')
+                </button>
+                <br>
+                Middle csope
+                <tt>MyEvent</tt>count:{{count}}
+                <ul>
+                    <li ng-repeat="item in [1,2]" ng-controller="EventController">
+                        Leaf scope
+                        <tt>MyEvent</tt>{{count}}
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
